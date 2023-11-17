@@ -48,7 +48,7 @@ public class LocationController {
             LocationDto location = mapService.get(id);
             return new ResponseEntity<>(location, HttpStatus.OK);
         } catch (EntityNotFoundException e){
-            return new ResponseEntity<>(null, HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
